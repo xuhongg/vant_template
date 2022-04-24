@@ -1,6 +1,7 @@
 <template>
   <div class="bj column">
     home
+    
     <van-button type="primary" @click="$router.push({ name: 'dayjs' })"
       >dayjs</van-button
     >
@@ -9,6 +10,9 @@
     >
     <van-button type="danger" @click="$router.push({ name: 'proxy' })"
       >proxy</van-button
+    >
+    <van-button type="warn" @click="$router.push({ name: 'scroll' })"
+      >scroll</van-button
     >
   </div>
 </template>
@@ -19,7 +23,9 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() {
+  
+  },
   methods: {},
 };
 </script>
@@ -56,6 +62,8 @@ span {
   div {
     color: #2c3e50;
     font-size: 50px;
+   
   }
+
 }
 </style>

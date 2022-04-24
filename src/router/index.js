@@ -5,6 +5,7 @@ import Home from "@/views/Home";
 import demoBasic from "@/views/demoBasic";
 import dayjs from "@/views/dayjs";
 import proxy from "@/views/proxy";
+import scroll from "@/views/scroll";
 
 Vue.use(Router);
 
@@ -28,6 +29,11 @@ export default new Router({
       path: "/proxy",
       name: "proxy",
       component: proxy
+    },
+    {
+      path: "/scroll",
+      name: "scroll",
+      component: scroll
     }
 
   ]
