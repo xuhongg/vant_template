@@ -1,8 +1,8 @@
 <template>
   <div class="bj">
     <div class="column">
-      <span>demoBasic</span>
-      vuex数据{{ dataTest }}
+      <span>proxy</span>
+      <span class="data"> {{ result }}</span>
     </div>
   </div>
 </template>
@@ -11,15 +11,48 @@
 import { Toast } from "vant";
 import dayjs from "dayjs";
 // import { dateTransfor } from "../utils";
+import { get, post } from "../http.js";
 import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 export default {
   components: {},
   data() {
     return {
       currentDate: null,
+      result: null,
+      Loading: null,
     };
   },
-  created() {},
+  created() {
+    //开源api get https://api.apiopen.top/getJoke?page=1&count=2&type=video
+
+    // this.$axios.get("/getJoke?page=1&count=2&type=video")
+    //     .then(function (response) {
+    //         console.log(response);
+    //     })
+    //     .catch(function (error) {
+    //         console.log(error);
+    //     });
+
+    // get('/getJoke',{page:1,count:3,type:'video'}).then(res => {
+    //     console.log('enter get res', res)
+    // }).catch(err => {
+
+    // })
+    this.loading = Toast.loading({
+      duration: 0, // 持续展示 toast
+      forbidClick: true,
+      message: "加载中...",
+    });
+    post("/getJoke", { page: 1, count: 2, type: "video" })
+      .then((res) => {
+        console.log("enter post res", res);
+        this.result = res.result;
+        this.loading.clear();
+      })
+      .catch((err) => {
+        this.loading.clear();
+      });
+  },
   mounted() {},
   methods: {
     ...mapMutations({
@@ -99,5 +132,12 @@ span {
   width: 100vw;
   overflow: hidden;
   background-size: 100% 100%;
+  .data {
+    margin: 30px auto;
+    width: 690px;
+    height: 750px;
+    overflow: auto;
+    //   background: red;
+  }
 }
 </style>

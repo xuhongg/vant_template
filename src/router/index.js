@@ -4,12 +4,12 @@ import Router from "vue-router";
 import Home from "@/views/Home";
 import demoBasic from "@/views/demoBasic";
 import dayjs from "@/views/dayjs";
+import proxy from "@/views/proxy";
 
 Vue.use(Router);
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: "/",
       name: "Home",
       component: Home
@@ -24,6 +24,11 @@ export default new Router({
       name: "demoBasic",
       component: demoBasic
     },
-    
+    {
+      path: "/proxy",
+      name: "proxy",
+      component: proxy
+    }
+
   ]
 });
