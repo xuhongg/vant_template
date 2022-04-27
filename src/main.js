@@ -11,6 +11,9 @@ if (process.env.NODE_ENV == 'development') {
   let vConsole = new VConsole();
 }
 // 工具函数引入
+import "@/directive/debounce.js"
+import "@/directive/throttle.js"
+
 // import Utils from './utils'
 
 // Object.defineProperty(Vue.prototype, '$Utils', {value: Utils})

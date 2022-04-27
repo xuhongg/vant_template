@@ -14,14 +14,23 @@
     <van-button type="warn" @click="$router.push({ name: 'scroll' })"
       >scroll</van-button
     >
+     <van-button type="info" @click="$router.push({ name: 'debounceAndThrottle' })"
+      >防抖节流</van-button
+    >
+
   </div>
 </template>
 
 <script>
+
 export default {
-  components: {},
+  components: {
+  
+  },
   data() {
-    return {};
+    return {
+      
+    };
   },
   mounted() {
   

@@ -65,7 +65,7 @@ export default {
     //   handler(curVal, oldVal) {
     //     //改变其他变量的操作
     //   },
-    //   immidiately: true,
+    //   immediately: true,
     //   deep: true,
     // },
   },

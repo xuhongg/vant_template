@@ -2,7 +2,7 @@
   <div class="bj">
     <div class="column">
       <span>demoBasic</span>
-      vuex数据{{ dataTest }}
+      vuex数据{{ dataTest }} 
     </div>
   </div>
 </template>
@@ -10,9 +10,16 @@
 <script>
 import { Toast } from "vant";
 import dayjs from "dayjs";
+
 // import { dateTransfor } from "../utils";
 import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 export default {
+  props: {
+    // arr: {
+    //   type: Array,
+    //   default:()=>[]
+    // },
+  },
   components: {},
   data() {
     return {
@@ -28,11 +35,11 @@ export default {
   },
   watch: {
     //'list.xx':{} 监听一个属性的写法
-    // show: {
+    // msg: {
     //   handler(curVal, oldVal) {
     //     //改变其他变量的操作
     //   },
-    //   immidiately: true,
+    //   immediately: true,
     //   deep: true,
     // },
   },

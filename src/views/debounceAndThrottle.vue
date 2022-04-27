@@ -1,16 +1,11 @@
 <template>
   <div class="bj">
     <div class="column">
-      <span>scroll</span>
-     <div class="fa" id="fa">
-      <span>11111111111</span>
-      <span>22222222222</span>
-      <span>3333333333</span>
-      <span>444444444</span>
-      <span>55555555</span>
-      <span>6666666666</span>
-      <span>7777777777</span>
-    </div>
+      <span>demoBasic</span>
+      vuex数据{{ dataTest }}
+      <van-button type="info" v-debounce="[addF,1000]">点击测试debounce</van-button>
+      <van-button type="info" v-throttle="[delF,1000]">点击测试throttle</van-button>
+      count{{ count }}
     </div>
   </div>
 </template>
@@ -18,28 +13,39 @@
 <script>
 import { Toast } from "vant";
 import dayjs from "dayjs";
+
 // import { dateTransfor } from "../utils";
 import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 export default {
+  props: {
+    // arr: {
+    //   type: Array,
+    //   default:()=>[]
+    // },
+  },
   components: {},
   data() {
     return {
+      count: 0,
       currentDate: null,
     };
   },
   created() {},
-  mounted() {
-        // document.getElementById("fa").scrollTop =
-    //   document.getElementById("fa").scrollHeight;
-  },
+  mounted() {},
   methods: {
     ...mapMutations({
       changeDataTest: "changeDataTest",
     }),
+    addF() {
+      this.count++;
+    },
+    delF(){
+        this.count--; 
+    }
   },
   watch: {
     //'list.xx':{} 监听一个属性的写法
-    // show: {
+    // msg: {
     //   handler(curVal, oldVal) {
     //     //改变其他变量的操作
     //   },
@@ -110,23 +116,5 @@ span {
   width: 100vw;
   overflow: hidden;
   background-size: 100% 100%;
-   
-   .fa {
-      width: 750px;
-      height: 200px;
-      overflow-y:auto ;
-      background: rgb(116, 143, 194);
-      display: flex;
-      flex-flow: column-reverse;
-      align-items: center;
-      span{
-        text-align: center;
-        margin-top: 10px;
-        width: 750px;
-        height: 40px;
-        line-height: 40px;
-        background: rgb(173, 194, 116);
-      }
-    }
 }
 </style>
