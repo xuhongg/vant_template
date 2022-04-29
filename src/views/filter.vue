@@ -1,9 +1,9 @@
 <template>
   <div class="bj">
     <div class="column">
-      <span>demoBasic</span>
-      vuex数据{{ dataTest }} 
-     
+      <span>filter</span>
+      <span>千分位 {{ data | NumFormatThousand}}</span>
+      <span>千分位并保留两位小数{{ data1 | NumFormatThousandTwo}}</span>
     </div>
   </div>
 </template>
@@ -25,6 +25,8 @@ export default {
   data() {
     return {
       currentDate: null,
+      data: 111111111111111,
+      data1: 111111111111111,
     };
   },
   created() {},
@@ -99,5 +101,6 @@ span {
   width: 100vw;
   overflow: hidden;
   background-size: 100% 100%;
+  font-size: 20px;
 }
 </style>

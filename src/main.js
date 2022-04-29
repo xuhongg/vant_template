@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import Vue from "vue";
 import App from "./App";
+
 //仅在开发环境 去做vconsole展示
 import VConsole from 'vconsole/dist/vconsole.min.js'; //import vconsole
 if (process.env.NODE_ENV == 'development') {
@@ -13,6 +14,14 @@ if (process.env.NODE_ENV == 'development') {
 // 工具函数引入
 import "@/directive/debounce.js"
 import "@/directive/throttle.js"
+
+
+//引入全局filter
+import * as filter from './filter'
+console.log('filter',filter)
+Object.keys(filter).forEach(item => {
+  Vue.filter(item, filter[item])
+})
 
 // import Utils from './utils'
 
@@ -27,7 +36,7 @@ import "./plugins/vant.js";
 import "@vant/touch-emulator";
 import store from "./store";
 
-Vue.prototype.$axios = axios
+Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
