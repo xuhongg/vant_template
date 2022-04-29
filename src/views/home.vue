@@ -23,6 +23,9 @@
     <van-button type="primary" @click="$router.push({ name: 'filter' })"
       >全局filter</van-button
     >
+    <van-button type="warn" @click="$router.push({ name: 'persistedstate' })"
+      >persistedstate</van-button
+    >
   </div>
 </template>
 
@@ -64,7 +67,7 @@ span {
   overflow: hidden;
   background-size: 100% 100%;
   .van-button {
-    width: 50%;
+    width: 70%;
   }
   div {
     color: #2c3e50;

@@ -8,6 +8,7 @@ import proxy from "@/views/proxy";
 import scroll from "@/views/scroll";
 import debounceAndThrottle from "@/views/debounceAndThrottle";
 import filter from "@/views/filter";
+import persistedstate from "@/views/persistedstate";
 
 Vue.use(Router);
 
@@ -47,6 +48,12 @@ export default new Router({
       name: "filter",
       component: filter
     },
+    {
+      path: "/persistedstate",
+      name: "persistedstate",
+      component: persistedstate
+    },
+    
     
 
   ]
