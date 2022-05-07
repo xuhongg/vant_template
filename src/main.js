@@ -5,6 +5,10 @@ import axios from 'axios'
 import Vue from "vue";
 import App from "./App";
 
+//
+import "./mock/index.js"
+
+
 //仅在开发环境 去做vconsole展示
 import VConsole from 'vconsole/dist/vconsole.min.js'; //import vconsole
 if (process.env.NODE_ENV == 'development') {
@@ -14,6 +18,11 @@ if (process.env.NODE_ENV == 'development') {
 // 工具函数引入
 import "@/directive/debounce.js"
 import "@/directive/throttle.js"
+
+//echarts 引入
+
+import * as echarts from 'echarts'
+Vue.prototype.$echarts = echarts
 
 
 //引入全局filter

@@ -9,6 +9,9 @@ import scroll from "@/views/scroll";
 import debounceAndThrottle from "@/views/debounceAndThrottle";
 import filter from "@/views/filter";
 import persistedstate from "@/views/persistedstate";
+import echart from "@/views/echart";
+import mock from "@/views/mock";
+import flex from "@/views/flex";
 
 Vue.use(Router);
 
@@ -53,7 +56,21 @@ export default new Router({
       name: "persistedstate",
       component: persistedstate
     },
-    
+    {
+      path: "/echart",
+      name: "echart",
+      component: echart
+    },
+    {
+      path: "/mock",
+      name: "mock",
+      component: mock
+    },
+    {
+      path: "/flex",
+      name: "flex",
+      component: flex
+    },
     
 
   ]
