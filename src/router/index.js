@@ -12,6 +12,8 @@ import persistedstate from "@/views/persistedstate";
 import echart from "@/views/echart";
 import mock from "@/views/mock";
 import flex from "@/views/flex";
+import picPress from "@/views/picPress";
+import grid from "@/views/grid";
 
 Vue.use(Router);
 
@@ -70,6 +72,16 @@ export default new Router({
       path: "/flex",
       name: "flex",
       component: flex
+    },
+    {
+      path: "/picPress",
+      name: "picPress",
+      component: picPress
+    },
+    {
+      path: "/grid",
+      name: "grid",
+      component: grid
     },
     
 
