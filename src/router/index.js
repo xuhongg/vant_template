@@ -14,6 +14,7 @@ import mock from "@/views/mock";
 import flex from "@/views/flex";
 import picPress from "@/views/picPress";
 import grid from "@/views/grid";
+import dataType from "@/views/dataType";
 
 Vue.use(Router);
 
@@ -83,7 +84,11 @@ export default new Router({
       name: "grid",
       component: grid
     },
-    
+    {
+      path: "/dataType",
+      name: "dataType",
+      component: dataType
+    },
 
   ]
 });
