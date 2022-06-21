@@ -1,9 +1,9 @@
 <template>
   <div class="bj">
-    <div class="column">
-      <span>grid</span>
-     
-    </div>
+   <span>11111111111111</span>
+   <span>22222222222222</span>
+   <span>33333333333333</span>
+   <span>4444444444444</span>
   </div>
 </template>
 
@@ -98,5 +98,16 @@ span {
   width: 100vw;
   overflow: hidden;
   background-size: 100% 100%;
+  display:grid;
+  background: gold;
+   grid-template-columns: 1fr 1fr 2fr 2fr;
+  span{
+    background: red;
+    // margin-top:10px;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    
+  }
 }
 </style>
