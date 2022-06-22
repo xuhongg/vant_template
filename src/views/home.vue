@@ -12,10 +12,10 @@
     <van-button type="warn" @click="$router.push({ name: 'persistedstate' })">persistedstate</van-button>
 
     <van-button type="danger" @click="$router.push({ name: 'echart' })">echarts</van-button>
-    <van-button type="warn" @click="$router.push({ name: 'grid' })">grid</van-button>
 
     <van-button type="primary" @click="$router.push({ name: 'mock' })">mock</van-button>
     <van-button type="warn" @click="$router.push({ name: 'flex' })">flex</van-button>
+    <van-button type="danger" @click="$router.push({ name: 'grid' })">grid</van-button>
     <van-button type="primary" @click="$router.push({ name: 'picPress' })">picPress</van-button>
   </div>
 </template>

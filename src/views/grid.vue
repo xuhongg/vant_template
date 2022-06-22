@@ -1,9 +1,16 @@
 <template>
   <div class="bj">
-   <span>11111111111111</span>
-   <span>22222222222222</span>
-   <span>33333333333333</span>
-   <span>4444444444444</span>
+    <div class="grid1">
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>5</span>
+      <span>6</span>
+      <span>7</span>
+      <span>8</span>
+      <!-- <span>9</span> -->
+    </div>
   </div>
 </template>
 
@@ -26,7 +33,28 @@ export default {
       currentDate: null,
     };
   },
-  created() {},
+  created() {
+    // 第一步，我们需要把某个容器指定成网格容器：
+    // 这个时候，.grid 就变成了一个 网格容器（Grid Conatainer），包含在这个容器中的子元素则自动变成了 网格项(Grid Items)， Grid 的所有属性都在两个概念之间展开。就是一个网格容器中，包含着 9 个网格项。
+    // 上面这个等宽的三行三列的布局，如何实现呢？在传统方案中，我们可能需要借助浮动属性等来实现，但是借助 Grid ，就很简单了，在为父元素指定 display: grid; 之后，我们可以借助两个属性: grid-template-columns, grid-template-rows 和一个新单位 fr 来轻松实现。
+    //     .grid {
+    //     display: grid;
+    //     grid-template-columns: 1fr 1fr 1fr;
+    //     grid-template-rows: 1fr 1fr 1fr;
+    //     grid-gap: 20px 10px;
+    // }
+    // grid-template-columns 和 grid-template-rows 分别表示水平方向上和垂直方向上网格项的空间分配比例，fr 是一个新单位，表示占据可用空间的一等分。
+    // 所以上面的代码表示，在水平和垂直方向分别把可用空间分为三份，且三份占据空间相等。grid-gap 属性指的是网格项之间的间隙，后面会介绍到。
+    // 学习到了这两个属性，我们已经可以轻松地布局出常见的多栏布局，例如我们要实现一个水平为 1:2:1 的布局，可以这样实现：
+    // .grid {
+    //     display: grid;
+    //     grid-template-columns: 1fr 2fr 1fr;
+    //     grid-gap: 10px;
+    // }
+
+
+    // 注意：column，float，clear 与 vertical-align 在栅格容器上无效。
+  },
   mounted() {},
   methods: {
     ...mapMutations({
@@ -98,16 +126,24 @@ span {
   width: 100vw;
   overflow: hidden;
   background-size: 100% 100%;
-  display:grid;
-  background: gold;
-   grid-template-columns: 1fr 1fr 2fr 2fr;
-  span{
+  .grid1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 10px;
+    // padding:20px;
+    // height: 500px;
+    width: 750px;
     background: red;
-    // margin-top:10px;
-    height: 40px;
-    line-height: 40px;
-    color: white;
-    
+    span {
+      background: blue;
+      font-size: 20px;
+      height: 100px;
+      // width: 100px;
+      line-height: 100px;
+      text-align: center;
+      border: 1px solid yellow;
+      justify-self: stretch;
+    }
   }
 }
 </style>
