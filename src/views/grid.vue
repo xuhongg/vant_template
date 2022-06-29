@@ -9,7 +9,19 @@
       <span>6</span>
       <span>7</span>
       <span>8</span>
-      <!-- <span>9</span> -->
+      <span>9</span>
+    </div>
+
+    <div class="grid2">
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>5</span>
+      <span>6</span>
+      <span>7</span>
+      <span>8</span>
+      <span>9</span>
     </div>
   </div>
 </template>
@@ -51,8 +63,6 @@ export default {
     //     grid-template-columns: 1fr 2fr 1fr;
     //     grid-gap: 10px;
     // }
-
-
     // 注意：column，float，clear 与 vertical-align 在栅格容器上无效。
   },
   mounted() {},
@@ -143,6 +153,29 @@ span {
       text-align: center;
       border: 1px solid yellow;
       justify-self: stretch;
+    }
+  }
+
+  .grid2 {
+    margin-top:30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1fr 3fr 1fr;
+    grid-gap: 10px;
+    width: 750px;
+    background: red;
+    span {
+      // grid-column: 1/3;
+      background: blue;
+      font-size: 20px;
+      height: 100px;
+      width: 100px;
+      line-height: 100px;
+      text-align: center;
+      align-items: center;
+      border: 1px solid yellow;
+      justify-self: center;
+      //  justify-self: start | end | center | stretch;
     }
   }
 }
