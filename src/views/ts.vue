@@ -1,8 +1,9 @@
 <template>
   <div class="bj">
     <div class="column">
-      <span>dataType</span>
+      <span>demoBasic</span>
       vuex数据{{ dataTest }} 
+     
     </div>
   </div>
 </template>
@@ -27,23 +28,8 @@ export default {
     };
   },
   created() {
-      let [a=100] =[{a:'11'},{b:'aa'}]
-        console.log(a)
-        console.log(typeof 'aa' == 'string')
-        // typeof (null); //'object'  由于在js中，null值表示一个空对象指针，而这也正是使用typeof操作 符检测null值时会返回"object"的原因（笔试面试常考)
+    
 
-        console.log([1, 2] instanceof Array)
-
-        console.log([1, 2].constructor == Array)
-  
-        console.log(Object.prototype.toString.call([])) //[object Array]
-        console.log(Object.prototype.toString.call(null)) //[object Array]
-        console.log(Object.prototype.toString.call(undefined)) //[object Array]
-
-        console.log(!null)//true
-        console.log(!undefined)//true
-        console.log(!"")//true
-        console.log(!" ")//false
   },
   mounted() {},
   methods: {
